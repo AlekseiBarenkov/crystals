@@ -1,0 +1,114 @@
+/* Footer */
+
+.footer {
+    padding: 75px 0;
+    background: url('../img/footer/bg.png') 0 0/100% 100% no-repeat;
+    &__name {
+        margin-bottom: 100px;
+        width: 100%;
+        height: auto;
+    }
+}
+
+.footer-row {
+    margin-bottom: 45px;
+    width: 60%;
+    display: flex;
+    justify-content: space-between;
+
+
+    &__link {
+        display: block;
+        font-family: 'Basis Grotesque Pro';
+        font-size: 16px;
+        line-height: 16px;
+        text-transform: uppercase;
+        color: black;
+        
+        &:first-child {
+            margin-bottom: 20px;
+        }
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+.footer-copyright {
+
+    &__text {
+        display: inline-block;
+        font-family: 'Basis Grotesque Pro';
+        font-size: 12px;
+        line-height: 24px;
+        
+        &:first-child {
+            margin-right: 10px;
+        }
+    }
+}
+
+@media (max-width: 1200px) {
+    .footer {
+        padding: 25px 0;
+    }
+}
+
+@media (max-width: 991px) {
+    .footer {
+        &__name {
+            margin-bottom: 60px;
+        }
+    }
+    .footer-row {
+        margin-bottom: 25px;
+        &__link {
+            font-size: 12px;
+            line-height: 12px;
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .footer {
+        &__name {
+            margin-bottom: 40px;
+        }
+    }
+    .footer-row {
+        margin-bottom: 15px;
+        &__link {
+            font-size: 8px;
+            line-height: 4px;
+        }
+    }
+    .footer-copyright {
+        &__text {
+            font-size: 8px;
+        }
+    }
+}
+
+@media (max-width: 479px) {
+    .footer {
+        padding: 5px 0;
+        &__name {
+            margin-bottom: 20px;
+        }
+    }
+    .footer-row {
+        flex-direction: column;
+        &__col {
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+    .footer-copyright {
+        &__text {
+            font-size: 5px;
+            &:first-child {
+                margin-right: 0;
+            }
+        }
+    }
+}

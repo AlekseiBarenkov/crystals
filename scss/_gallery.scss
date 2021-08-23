@@ -1,0 +1,72 @@
+/* Gallery */
+
+.gallery {
+    padding: 75px 0;
+    border-bottom: 1px solid #EAC1BF;
+    
+    &__link {
+        font-family: 'Basis Grotesque Pro';
+        font-size: 16px;
+        line-height: 16px;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        color: black;
+
+        &:hover {
+            background: linear-gradient(-45deg, rgba(255,230,171,1) 0%, rgba(190,192,233,1) 100%);
+            background-clip: text;
+            -webkit-background-clip: text; /* Обрезаем фон по тексту */
+            -webkit-text-fill-color: transparent; /* Прозрачный текст */
+        }
+    }
+
+    &__row {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    &__img {
+        flex: 0 1 15%;
+        margin-top: 20px;
+        display: block;
+        
+        //max-width: 210px;
+        width: 100%;
+        height: auto;
+
+        //& + & {
+        //    margin-left: 16px;
+        //}
+    }
+}
+
+@media (max-width: 1200px) {
+    .gallery {
+        padding: 25px 0;
+        &__link-row {
+            margin-bottom: 15px;
+        }
+        &__img {
+            flex: 1 1 33.333%;
+            margin-top: 2px;
+        }
+    }
+}
+
+@media (max-width: 991px) {
+    .gallery {
+        &__link-row {
+            display: flex;
+            justify-content: space-around;
+        }
+    }
+}
+
+@media (max-width: 479px) {
+    .gallery {
+        &__link {
+            font-size: 12px;
+        }
+    }
+}

@@ -1,0 +1,201 @@
+/* Reviews */
+
+.reviews {
+      padding: 30px 0;
+      border-bottom: 1px solid #EAC1BF;
+}
+.reviews-box {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+
+      &:hover .slick-arrow {
+            opacity: 1;
+      }
+
+      &__frame {
+            display: block;
+            flex: 1 1 25%;
+      }
+
+      &__frame-img {
+      width: 100%;
+      height: auto;
+      }
+}
+.slick-wrapper {
+      flex: 0 1 35%;
+
+      &__reviews {
+      }
+
+      &__slick-box {
+            overflow: hidden;
+            max-width: 650px;
+            //width: 100%;
+            max-height: 650px;
+            height: 100%;
+            & .slick-list {
+                  & .slick-track {
+                        display: flex;
+                  }
+            }
+      }
+
+      &__reviews-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            min-width: 0;
+            
+      }
+
+      &__img {
+            display: block;
+            border-radius: 50%;
+            margin-bottom: 10px;
+            max-width: 96px;
+            width: 100%;
+            height: auto;
+      }
+
+      &__text {
+            font-size: 46px;
+            line-height: 72px;
+            margin-bottom: 30px;
+      }
+
+      &__name {
+            font-family: 'Basis Grotesque Pro';
+            font-size: 16px;
+            line-height: 16px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+      }
+
+      &__pic {
+            display: block;
+      }
+}
+
+.slick-arrow {
+      padding: 5px;
+      position: absolute;
+      top: 50%;
+      font-size: 32px;
+      border-radius: 50%;
+      cursor: pointer;
+      opacity: 0;
+      color: #817f7f;
+
+      transition: background .2s linear, color .2s linear, opacity .2s linear;
+      &:hover {
+            background-color: #f38181;
+            color: white;
+      }
+}
+
+.icofont-arrow-left {
+      left: 15%;
+}
+
+.icofont-arrow-right {
+      right: 15%;
+}
+
+
+@media (max-width: 1200px) {
+      .reviews {
+            padding: 5px 0;
+      }
+      .slick-wrapper {
+            &__slick-box {
+                  max-height: 400px;
+            }
+            &__img {
+                  max-width: 80px;
+                  margin-bottom: 0;
+            }
+            &__text {
+                  font-size: 35px;
+                  line-height: 50px;
+                  margin-bottom: 15px;
+            }
+            &__name {
+                  font-size: 12px;
+                  line-height: 10px;
+            }
+      }
+}
+
+@media (max-width: 991px) {
+      .reviews-box {
+            &:hover .slick-arrow {
+                  opacity: 0;
+            }
+      }
+      .slick-wrapper {
+            &__slick-box {
+                  max-width: 450px;
+            }
+            &__img {
+                  max-width: 50px;
+            }
+            &__text {
+                  font-size: 25px;
+                  line-height: 40px;
+                  margin-bottom: 10px;
+            }
+            &__name {
+                  font-size: 10px;
+                  line-height: 4px;
+            }
+      }
+}
+
+@media (max-width: 767px) {
+
+      .slick-wrapper {
+            &__slick-box {
+                  max-width: 300px;
+            }
+            &__img {
+                  max-width: 40px;
+            }
+            &__text {
+                  font-size: 15px;
+                  line-height: 20px;
+                  margin-bottom: 10px;
+            }
+            &__name {
+                  margin-bottom: 0;
+            }
+      }
+}
+
+@media (max-width: 479px) {
+
+      .slick-wrapper {
+            &__slick-box {
+                  max-width: 150px;
+            }
+            &__img {
+                  max-width: 25px;
+            }
+            &__text {
+                  font-size: 12px;
+                  line-height: 15px;
+                  margin-bottom: 8px;
+            }
+            &__name {
+                  font-size: 8px;
+            }
+
+            &__pic {
+                  max-width: 15px;
+            }
+      }
+}

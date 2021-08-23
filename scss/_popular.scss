@@ -1,0 +1,323 @@
+/* Popular */
+
+.popular {
+    padding: 150px 15px 150px 45px;
+    position: relative;
+    border-bottom: 1px solid #EAC1BF;
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 2;
+        width: 100%;
+        border: 1px solid #EAC1BF
+    }
+}
+
+.popular-box {
+    display: flex;
+    justify-content: space-between;
+		&__product-row {
+            flex: 0 1 60%;
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+		}
+
+		&__product-bg {
+            position: absolute;
+            bottom: 50%;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 100px;
+
+            background: radial-gradient(50% 50% at 50% 50%, rgba(255, 255, 255, 0) 0%, #FFFFFF 100%), #FACCBF;
+		}
+
+		&__product-card {
+            margin-right: 25px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            cursor: pointer;
+            max-width: 348px;
+            width: 100%;
+            border: 1px solid #EAC1BF;
+            border-radius: 16px;
+            background-color: #fff;
+            z-index: 2;
+
+            transition: .1s linear;
+
+            &:last-child {
+                margin-right: 0;
+            }
+            &:hover {
+                box-shadow: 0px 0px 10px 10px rgba(80, 66, 34, 0.2);
+                max-width: 349px;
+            }
+            &:active {
+                transform: translateY(-1px);
+                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+            }
+		}
+
+		&__product-name {
+            font-family: 'Basis Grotesque Pro';
+            font-size: 16px;
+            line-height: 20px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+		}
+
+		&__product-img {
+            width: 100%;
+            height: auto;
+		}
+
+		&__product-price {
+            font-family: 'Basis Grotesque Pro';
+            font-size: 16px;
+            line-height: 16px;
+            letter-spacing: 1px;
+		}
+}
+.labels-box {
+    flex: 0 1 35%;
+		&__title {
+            margin-bottom: 20px;
+            font-family: 'Basis Grotesque Pro';
+            font-size: 16px;
+            line-height: 16px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+		}
+
+		&__label {
+            display: block;
+            margin-bottom: 32px;
+		}
+
+		&__radio {
+            display: none;
+		}
+
+		&__text {
+            position: relative;
+            display: block;
+            font-size: 47px;
+            line-height: 48px;
+            cursor: pointer;
+            transition: .3s linear;
+            &::before {
+                content: "";
+                display: block;
+                width: 28px;
+                height: 28px;
+                position: absolute;
+                top: 13px;
+                left: -47px;
+                z-index: 1;
+                filter: blur(10px);
+                border-radius: 10px;
+            }
+            &::after {
+                content: "";
+                position: absolute;
+                top: 8px;
+                left: -52px;
+                width: 38px;
+                height: 38px;
+                border: 2px solid rgb(126, 81, 81);
+                opacity: 0;
+                filter: blur(1px);
+                box-shadow: 0px 0px 5px 5px rgba(80, 66, 34, 0.2);
+                transition: .3s linear;
+                border-radius: 50%;
+            }
+
+            &:hover {
+                letter-spacing: 2px;
+                text-shadow: 0px 4px 3px rgba(0,0,0,0.4),
+                0px 8px 13px rgba(0,0,0,0.1),
+                0px 18px 23px rgba(0,0,0,0.1);
+            }
+
+
+            
+		}
+
+		&__btn {
+            margin-top: 20px;
+            padding: 12px 30px;
+            font-family: 'Basis Grotesque Pro';
+            font-weight: 500;
+            font-size: 20px;
+            line-height: 20px;
+            text-transform: uppercase;
+            border-radius: 32px;
+            cursor: pointer;
+            transition: .1s linear;
+
+            background: url("../img/popular/bg-btn.png") 0 0/100% 100% no-repeat;
+
+            &:hover {
+                transform: translateY(-3px);
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            }
+            &:active {
+                transform: translateY(-1px);
+                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+            }
+		}
+}
+
+.labels-box__radio:checked + .labels-box__text::after {
+    opacity: 1;
+}
+
+.quartz::before {
+    background: #FACCBF;
+
+}
+
+.pyrite::before {
+    background: #E3D8C1;
+
+}
+
+.shungite::before {
+    background: #878C8F;
+
+}
+
+.amethyst::before {
+    background: #C09DBD;
+
+}
+
+.selenite::before {
+    background: #FAEDA3;
+
+}
+
+@media (max-width: 991px) {
+    .popular {
+        padding: 100px 15px 100px 45px;
+    }
+    .labels-box {
+        flex: 0 1 37%;
+        &__label {
+            margin-bottom: 20px;
+        }
+        &__text {
+            font-size: 40px;
+            line-height: 30px;
+            &::before {
+                top: 2px;
+                left: -40px;
+            }
+            &::after {
+                top: -3px;
+                left: -45px;
+            }
+        }
+        &__btn {
+            padding: 12px 15px;
+            margin-top: 10px;
+            font-size: 16px;
+            line-height: normal;
+        }
+    }
+    .popular-box {
+        &__product-bg {
+            bottom: 30%;
+        }
+        &__product-card {
+            margin-right: 10px;
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .popular {
+        padding: 25px;
+    }
+    .popular-box {
+        flex-direction: column;
+        &__product-row {
+            margin-top: 75px;
+        }
+        &__product-bg {
+            bottom: 20%;
+        }
+    }
+    .labels-box {
+        
+        &__title {
+            text-align: center;
+        }
+        &__label {
+            max-width: 243px;
+            margin: 0 auto 20px;
+        }  
+        &__btn {
+            display: block;
+            max-width: 178px;
+            margin: 35px auto 0;
+            &:hover {
+                transform: none;
+                box-shadow: none;
+            }
+        }
+    }
+    
+}
+
+@media (max-width: 479px) {
+    .labels-box {
+        &__title {
+            font-size: 14px;
+            line-height: 10px;
+        }
+        &__label {
+            max-width: 188px;
+        }
+        &__text {
+            font-size: 30px;
+            line-height: 25px;
+            &::before {
+                width: 18px;
+                height: 18px;
+                top: 4px;
+                left: -26px;
+                filter: blur(5px);
+            }
+            &::after {
+                top: 0px;
+                left: -30px;
+                width: 26px;
+                height: 26px;
+            }
+        }
+        &__btn {
+            margin-top: 0;
+            padding: 10px 12px;
+            font-size: 12px;
+        }
+    }
+    .popular-box{
+        &__product-row {
+            margin-top: 45px;
+        }
+        &__product-name {
+            font-size: 13px;
+        }
+        &__product-price {
+            font-size: 13px;
+        }
+    }
+}

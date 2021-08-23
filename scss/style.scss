@@ -1,0 +1,28 @@
+@import "_fonts";
+
+@import "_nullstyle";
+
+body {
+    font-family: 'Conv_Ogg Roman';
+    padding-top: 80px;
+
+}
+
+.container {
+    max-width: 1390px;
+    margin: 0 auto;
+    padding: 0 15px;
+    width: 100%;
+}
+
+@import "header";
+@import "intro";
+@import "shop";
+@import "subscribe";
+@import "popular";
+@import "intention";
+@import "gifts";
+@import "club";
+@import "reviews";
+@import "gallery";
+@import "footer";

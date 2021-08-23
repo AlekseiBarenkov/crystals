@@ -1,0 +1,104 @@
+/* Intention */
+
+.intention {
+    padding: 100px 0;
+}
+
+.intention-box {
+
+		&__title {
+            margin-bottom: 85px;
+            font-size: 47px;
+            line-height: 68px;
+            text-align: center;
+		}
+
+		&__row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+		}
+
+        &__col {
+            margin: 0 14px 25px;
+        }
+
+		&__link {
+            position: relative;
+            display: block;
+            margin-bottom: 25px;
+		}
+
+        &__link-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 2;
+            width: 100%;
+            height: 104px;
+            background: rgba(185, 86, 187, 0.65);
+            filter: blur(50px);
+            border-radius: 31px;
+            opacity: 0;
+            transition: .2s linear;
+            &:hover {
+                opacity: 1;
+            }
+        }
+
+		&__subtitle {
+            font-family: 'Basis Grotesque Pro';
+            text-align: center;
+            font-size: 16px;
+            line-height: 16px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+		}
+}
+
+@media (max-width: 1200px) {
+    .intention {
+        padding: 50px 0;
+    }
+}
+
+@media (max-width: 767px) {
+    .intention {
+        padding: 25px 0;
+    }
+    .intention-box {
+        &__title {
+            margin-bottom: 40px;
+        }
+    }
+}
+
+@media (max-width: 320px) {
+    .intention {
+        padding: 10px 0;
+    }
+    .intention-box {
+        &__title {
+            margin-bottom: 10px;
+            font-size: 30px;
+            line-height: 60px;
+        }
+        &__col {
+            text-align: center;
+            max-width: 55px;
+        }
+        &__link {
+            margin-bottom: 4px;
+        }
+        &__link-bg {
+            height: 55px;
+            filter: blur(25px);
+        }
+        &__img {
+            width: 100%;
+        }
+        &__subtitle {
+            font-size: 10px;
+        }
+    }
+}

@@ -1,0 +1,302 @@
+/* Header */
+
+.header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1001;
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #fff;
+        z-index: 5;
+    }
+    &__body {
+        display: flex;
+        justify-content: space-between;
+        height: 80px;
+        align-items: center;
+        position: relative;
+        width: 100%;
+        
+    }
+
+    &__nav {
+        max-width: 930px;
+        width: 100%;
+    }
+
+    &__burger-box {
+        display: none;
+        position: relative;
+        padding: 15px;
+        border-radius: 50%;
+        cursor: pointer;
+        z-index: 6;
+        transition: all .3s ease 0s;
+        &:hover {
+            background-color: rgb(228, 220, 220);
+            box-shadow: 0px 0px 20px 10px rgba(194, 168, 158, 0.28);
+        }
+    }
+
+    &__burger {
+        position: relative;
+        width: 30px;
+        height: 22px;
+        
+        z-index: 6;
+        & span {
+            position: absolute;
+            background-color: #000;
+            width: 100%;
+            height: 2px;
+            left: 0;
+            top: 10px;
+            transition: all .3s ease 0s;
+        }
+        &::before, &::after {
+            content: "";
+            background-color: #000;
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            left: 0;
+            transition: all .3s ease 0s;
+        }
+        &::before {
+            top: 0;
+        }
+        &::after {
+            bottom: 0;
+        }
+        &.active::before {
+            transform: rotate(45deg);
+            top: 10px;
+        }
+        &.active::after {
+            transform: rotate(-45deg);
+            bottom: 10px;
+        }
+        &.active span {
+            transform: scale(0);
+        }
+    }
+
+    &__menu {
+        position: relative;
+        z-index: 6;
+    }
+
+    &__list {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__link {
+        text-transform: uppercase;
+        color: #000;
+        font-family: 'Basis Grotesque Pro';
+        font-weight: 500;
+        font-size: 16px;
+        letter-spacing: 1px;
+        
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    &__offer {
+        padding-top: 4px;
+        background: #d8e6e5;
+        text-align: center;
+        position: relative;
+        z-index: 6;
+    }
+
+    &__text {
+        font-family: 'Basis Grotesque Pro';
+        font-weight: 500;
+        font-size: 16px;
+        text-transform: uppercase;
+    }
+
+    &__picture {
+        position: relative;
+        display: flex;
+        align-items: center;
+        z-index: 6;
+
+        
+    }
+
+    &__form {
+        &.active {
+            .header__input {
+                opacity: 1;
+                z-index: 7;
+            }
+
+            .header__button {
+                display: block;
+            }
+
+            .header__ico-search {
+                display: none;
+            }
+        }
+    }
+
+    &__ico-search {
+        display: block;
+        cursor: pointer;
+        font-size: 25px;
+    }
+
+    &__input {
+        padding: 5px 45px 5px 10px;
+        width: 200px;
+        height: 45px;
+        font-family: 'Basis Grotesque Pro';
+
+        box-shadow: 0 0 10px 0 #000;
+        border: none;
+        border-radius: 22px;
+        position: absolute;
+        left: -155px;
+        top: 0px;
+        z-index: -1;
+        opacity: 0;
+
+        transition: opacity .2s linear;
+    }
+
+    &__button {
+        height: 45px;
+        display: none;
+        background: inherit;
+        appearance: none;
+        position: relative;
+        z-index: 8;
+    }
+
+    &__ico {
+        display: block;
+        font-size: 25px;
+        color: #000;
+        &:nth-child(2) {
+            margin-left: 20px;
+            font-size: 35px;
+        }
+    }
+}
+
+.icofont {
+    border-radius: 50%;
+    padding: 10px;
+
+    transition: background .2s linear, color .2s linear;
+    &:hover {
+        background-color: #f38181;
+        color: white;
+    }
+}
+
+.icofont-diamond {
+    padding: 5px;
+}
+
+/* Media */
+
+@media (max-width: 1230px) {
+    .header {
+        &__body {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            height: 80px;
+            align-items: center;
+            position: relative;
+            width: 100%;
+            
+        }
+    }
+}
+
+@media (max-width: 990px) {
+    body {
+        padding-top: 64px;
+    }
+    .header {
+        &__offer {
+            padding-top: 2px;
+        }
+
+        &__text {
+            font-size: 12px;
+        }
+        &__body {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            height: 50px;
+            align-items: center;
+            position: relative;
+            width: 100%;
+            
+        }
+
+        &__nav {
+            max-width: none;
+            width: initial;
+        }
+
+        &__burger-box {
+            display: block;
+        }
+
+        &__menu {
+            width: 100%;
+            height: auto;
+            position: fixed;
+            z-index: 6;
+            top: -100%;
+            left: 0;
+            background-color: #fff;
+            transition: all .3s ease 0s;
+            z-index: 4;
+            &.active {
+                top: 64px;
+            }
+        }
+
+        &__list {
+            display: block;
+            max-width: 1390px;
+            margin: 20px auto 0;
+            padding: 0 15px;
+            width: 100%;
+            & > li {
+                margin: 0 0 30px 15px;
+            }
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        &__input {
+            width: 175px;
+            left: -131px;
+        }
+        &__ico:nth-child(2) {
+            margin-left: 0;
+            font-size: 30px;
+        }
+    }
+}

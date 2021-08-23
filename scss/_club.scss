@@ -1,0 +1,93 @@
+/* Club */
+
+.club {
+    padding: 70px 0;
+    border-bottom: 1px solid #EAC1BF;
+    background: linear-gradient(270deg, #FFFFFF 45.52%, rgba(255, 255, 255, 0.58) 100%), #EAC1BF;
+}
+.club-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.club-box-about {
+    
+    flex: 0 1 25%;
+
+    &__title {
+        margin-bottom: 15px;
+    }
+
+    &__subtitle {
+        font-family: 'Basis Grotesque Pro';
+        font-size: 16px;
+        line-height: 24px;
+        margin-bottom: 25px;
+    }
+}
+
+.club-box-gallery {
+    flex: 0 1 70%;
+    display: flex;
+    justify-content: space-between;
+
+    &__pic {
+        margin-right: 20px;
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+
+    &__img {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media (max-width: 991px) {
+    .club {
+        padding: 20px 0;
+    }
+
+    .club-box {
+        display: flex;
+        flex-direction: column;
+        align-items: normal;
+    }
+
+    .club-box-about {
+        margin-bottom: 20px;
+
+        &__title {
+            margin-bottom: 5px;
+        }
+
+        &__subtitle {
+            font-size: 13px;
+            margin-bottom: 15px;
+        }
+    }
+
+    .club-box-gallery {
+        &__pic {
+            margin-right: 10px;
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .club-box-gallery {
+        &__pic {
+            margin-right: 5px;
+        }
+    }
+}
+
+@media (max-width: 479px) {
+    .club-box-gallery {
+        &__pic {
+            margin-right: 2px;
+        }
+    }
+}
